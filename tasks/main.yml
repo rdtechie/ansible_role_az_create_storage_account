@@ -5,15 +5,15 @@
   loop: "{{ azure_tags|dict2items }}"
 
 - name: Ensure Storage Account Exists
-    azure_rm_storageaccount:
-      tenant: "{{ azure_tenant_id }}"
-      subscription_id: "{{ azure_subscription_id }}"
-      client_id: "{{ azure_client_id }}"
-      secret: "{{ azure_client_secret }}"
-      resource_group: "{{ az_resource_group_name }}"
-      name: "{{ az_storage_account_name }}"
-      account_type: "{{ az_storage_account_type }}"
-      state: present
-      tags: "{{ az_tags_dict }}"
+  azure_rm_storageaccount:
+    tenant: "{{ azure_tenant_id }}"
+    subscription_id: "{{ azure_subscription_id }}"
+    client_id: "{{ azure_client_id }}"
+    secret: "{{ azure_client_secret }}"
+    resource_group: "{{ az_resource_group_name }}"
+    name: "{{ az_storage_account_name }}"
+    account_type: "{{ az_storage_account_type }}"
+    state: present
+    tags: "{{ az_tags_dict }}"
   register: CreatedStorageAccount
 ...
